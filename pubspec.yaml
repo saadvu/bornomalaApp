@@ -15,6 +15,12 @@ dependencies:
   get: ^4.6.6
   getwidget: ^4.0.0
   flutter_screenutil: ^5.9.3
+  animated_text_kit: ^4.2.2
+  google_fonts: ^6.2.1
+  avatar_glow: ^3.0.1
+  flutter_gradient_text: ^1.0.1
+  bordered_text: ^2.0.0
+  auto_size_text: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -26,3 +32,5 @@ flutter:
   uses-material-design: true
   assets:
     - assets/imgs/
+    - assets/logos/
+    - assets/alphabets/

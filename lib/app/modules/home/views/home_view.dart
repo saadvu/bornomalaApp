@@ -1,4 +1,5 @@
 import 'package:bornomala/app/data/imgs.dart';
+import 'package:bornomala/app/routes/app_pages.dart';
 import 'package:bornomala/app/widgets/helper_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -62,72 +63,75 @@ class HomeView extends GetView<HomeController> {
           itemCount: 10,
           padding: EdgeInsets.only(top: 30.h),
           itemBuilder: (BuildContext context, int index) {
-            return Container(
-              height: 350.h,
-              margin: EdgeInsets.all(30.h),
-              padding: EdgeInsets.all(50.h),
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(0xFF80BFED),
-                    Color(0xFF7DA1F4),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(30.r),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  GFAvatar(
-                    radius: 100.r,
-                    backgroundImage: AssetImage(
-                      Imgs.splashImg,
-                    ),
-                  ),
-                  addW(30.w),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Title",
-                        style: TextStyle(
-                          fontSize: 50.sp,
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "Description",
-                        style: TextStyle(
-                          fontSize: 30.sp,
-                          color: Colors.white,
-                        ),
-                      ),
+            return InkWell(
+              onTap: () => Get.toNamed(Routes.ALPHABET),
+              child: Container(
+                height: 350.h,
+                margin: EdgeInsets.all(30.h),
+                padding: EdgeInsets.all(50.h),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [
+                      Color(0xFF80BFED),
+                      Color(0xFF7DA1F4),
                     ],
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
                   ),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.end,
+                  borderRadius: BorderRadius.circular(30.r),
+                ),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    GFAvatar(
+                      radius: 100.r,
+                      backgroundImage: AssetImage(
+                        Imgs.splashImg,
+                      ),
+                    ),
+                    addW(30.w),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Icon(
-                          Icons.star_border,
-                          color: Colors.white,
-                        ),
                         Text(
-                          "10",
+                          "Title",
                           style: TextStyle(
-                            fontSize: 30.sp,
+                            fontSize: 50.sp,
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
+                        Text(
+                          "Description",
+                          style: TextStyle(
+                            fontSize: 30.sp,
+                            color: Colors.white,
+                          ),
+                        ),
                       ],
                     ),
-                  ),
-                ],
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Icon(
+                            Icons.star_border,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "10",
+                            style: TextStyle(
+                              fontSize: 30.sp,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ),
             );
           },
