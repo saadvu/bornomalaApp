@@ -1,3 +1,4 @@
+import 'package:bornomala/app/data/alphabets/bn_alphabets.dart';
 import 'package:bornomala/app/data/imgs.dart';
 import 'package:bornomala/app/routes/app_pages.dart';
 import 'package:bornomala/app/widgets/helper_widgets.dart';
@@ -64,7 +65,10 @@ class HomeView extends GetView<HomeController> {
           padding: EdgeInsets.only(top: 30.h),
           itemBuilder: (BuildContext context, int index) {
             return InkWell(
-              onTap: () => Get.toNamed(Routes.ALPHABET),
+              onTap: () => Get.toNamed(
+                Routes.ALPHABET,
+                arguments: BnAlphabets.vowels,
+              ),
               child: Container(
                 height: 350.h,
                 margin: EdgeInsets.all(30.h),
