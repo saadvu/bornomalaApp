@@ -15,7 +15,7 @@ class BnAlphabets {
     AlphabetModel(
       alphabet: 'আ',
       imgPath: Imgs.bnVow2,
-      words: ['আম', 'আতা', 'আকাশ', 'আনারস'],
+      words: ['আতা', 'আপেল' 'আকাশ', 'আনারস'],
       sentence: 'আমটি আমি খাব পেড়ে',
     ),
     // model 'ই'

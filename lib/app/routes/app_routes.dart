@@ -6,6 +6,9 @@ abstract class Routes {
   static const HOME = _Paths.HOME;
   static const SPLASH = _Paths.SPLASH;
   static const ALPHABET = _Paths.ALPHABET;
+  static const VOWELS_USAGE = _Paths.VOWELS_USAGE;
+  static const POEM = _Paths.POEM;
+  static const POEM_LIST = _Paths.POEM_LIST;
 }
 
 abstract class _Paths {
@@ -13,4 +16,7 @@ abstract class _Paths {
   static const HOME = '/home';
   static const SPLASH = '/splash';
   static const ALPHABET = '/alphabet';
+  static const VOWELS_USAGE = '/vowels-usage';
+  static const POEM = '/poem';
+  static const POEM_LIST = '/poem-list';
 }

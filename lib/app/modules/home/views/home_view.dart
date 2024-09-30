@@ -1,7 +1,6 @@
 import 'package:bornomala/app/data/alphabets/bn_alphabets.dart';
 import 'package:bornomala/app/data/imgs.dart';
 import 'package:bornomala/app/routes/app_pages.dart';
-import 'package:bornomala/app/widgets/helper_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -9,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:getwidget/getwidget.dart';
 
 import '../controllers/home_controller.dart';
+import 'home_card.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -59,87 +59,48 @@ class HomeView extends GetView<HomeController> {
           ],
         ),
       ),
-      body: Center(
-        child: ListView.builder(
-          itemCount: 10,
-          padding: EdgeInsets.only(top: 30.h),
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: () => Get.toNamed(
-                Routes.ALPHABET,
-                arguments: BnAlphabets.vowels,
-              ),
-              child: Container(
-                height: 350.h,
-                margin: EdgeInsets.all(30.h),
-                padding: EdgeInsets.all(50.h),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [
-                      Color(0xFF80BFED),
-                      Color(0xFF7DA1F4),
-                    ],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.circular(30.r),
-                ),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    GFAvatar(
-                      radius: 100.r,
-                      backgroundImage: AssetImage(
-                        Imgs.splashImg,
-                      ),
-                    ),
-                    addW(30.w),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          "Title",
-                          style: TextStyle(
-                            fontSize: 50.sp,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                        Text(
-                          "Description",
-                          style: TextStyle(
-                            fontSize: 30.sp,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Icon(
-                            Icons.star_border,
-                            color: Colors.white,
-                          ),
-                          Text(
-                            "10",
-                            style: TextStyle(
-                              fontSize: 30.sp,
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
+      body: Column(
+        children: [
+          // bengali vowels
+          HomeCard(
+            onTapFn: () => Get.toNamed(
+              Routes.ALPHABET,
+              arguments: BnAlphabets.vowels,
+            ),
+            imgPath: Imgs.splashImg,
+            title: 'বাংলা স্বরবর্ণ',
+            des: 'Learn Vowels Easily',
+          ),
+          // bengali vowels usage
+          HomeCard(
+            customH: 250.h,
+            onTapFn: () => Get.toNamed(
+              Routes.VOWELS_USAGE,
+            ),
+            imgPath: Imgs.splashImg,
+            title: 'স্বরচিহ্ন ও এর ব্যবহার',
+            des: 'Learn Vowels Easily',
+          ),
+          // bengali consonants
+          HomeCard(
+            onTapFn: () => Get.toNamed(
+              Routes.ALPHABET,
+              arguments: BnAlphabets.consonants,
+            ),
+            imgPath: Imgs.splashImg,
+            title: 'বাংলা ব্যঞ্জনবর্ণ',
+            des: 'Learn Consonants Easily',
+          ),
+          // bengali poems
+          HomeCard(
+            onTapFn: () => Get.toNamed(
+              Routes.POEM_LIST,
+            ),
+            imgPath: Imgs.splashImg,
+            title: 'বাংলা কবিতা',
+            des: 'Learn Consonants Easily',
+          ),
+        ],
       ),
     );
   }
