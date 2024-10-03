@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../widgets/player.dart';
 import '../controllers/vowels_usage_controller.dart';
 import 'item.dart';
 
@@ -10,8 +11,14 @@ class VowelsUsageView extends GetView<VowelsUsageController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('VowelsUsageView'),
+        title: const Text('স্বরচিহ্ন ও এর ব্যবহার'),
         centerTitle: true,
+        actions: [
+          Player(
+            // audioPath: 'assets/audio/vowels_usage.mp3',
+            audioPath: 'assets/audio/parthona.mp3',
+          ),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(

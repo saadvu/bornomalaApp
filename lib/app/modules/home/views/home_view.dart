@@ -93,6 +93,7 @@ class HomeView extends GetView<HomeController> {
           ),
           // bengali poems
           HomeCard(
+            customH: 250.h,
             onTapFn: () => Get.toNamed(
               Routes.POEM_LIST,
             ),

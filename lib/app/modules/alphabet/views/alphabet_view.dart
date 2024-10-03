@@ -19,7 +19,7 @@ class AlphabetView extends GetView<AlphabetController> {
       resizeToAvoidBottomInset: false,
       extendBody: true,
       appBar: AppBar(
-        title: const Text('AlphabetView'),
+        title: const Text('অক্ষর পরিচিতি'),
         centerTitle: true,
         actions: [
           // play button
@@ -86,9 +86,9 @@ class AlphabetView extends GetView<AlphabetController> {
                       ),
                       itemBuilder: (context, index) {
                         return InkWell(
-                          onTap: () {
-                            controller.sModel.value = controller.sList[index];
-                          },
+                          onTap: () => controller.changeAlphabet(
+                            controller.sList[index],
+                          ),
                           child: Container(
                             height: controller.sModel.value.alphabet ==
                                     controller.sList[index].alphabet
